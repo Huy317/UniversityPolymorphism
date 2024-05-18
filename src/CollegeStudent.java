@@ -14,10 +14,6 @@ public class CollegeStudent extends Student {
     public CollegeStudent() {
 
     }
-//    @Override
-//    public String getName(){
-//        return fullName;
-//    }
     @Override
     public String getType(){
         return "College";
