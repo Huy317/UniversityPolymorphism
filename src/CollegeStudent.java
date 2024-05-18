@@ -30,7 +30,7 @@ public class CollegeStudent extends Student {
         if (super.totalCredit >= 100 && super.avgScore >=5 && graduationExamScore >= 5){
             return true;
         }
-        return  false;
+        return false;
     }
     @Override
     public void  print(){
