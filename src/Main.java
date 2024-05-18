@@ -13,6 +13,7 @@ public class Main {
         boolean bool;
         String strInput;
         while (n != 8){
+            System.out.println("-------------------------------------");
             System.out.println("1.add new college student");
             System.out.println("2.add new university student");
             System.out.println("3.remove student by code");
@@ -21,6 +22,8 @@ public class Main {
             System.out.println("6.sort list");
             System.out.println("7.Find student by full name");
             System.out.println("8.Exit");
+            System.out.println("-------------------------------------");
+            System.out.print("Input: ");
             n = sc.nextInt();
             sc.nextLine();
             switch (n){
