@@ -14,6 +14,14 @@ public class CollegeStudent extends Student {
     public CollegeStudent() {
 
     }
+//    @Override
+//    public String getName(){
+//        return fullName;
+//    }
+    @Override
+    public String getType(){
+        return "College";
+    }
     @Override
     public void input(){
         Scanner sc = new Scanner(System.in);
@@ -27,5 +35,10 @@ public class CollegeStudent extends Student {
             return true;
         }
         return  false;
+    }
+    @Override
+    public void  print(){
+        String output = studentNumber + " " + fullName + " "+totalCredit+" "+avgScore +" "+graduationExamScore;
+        System.out.println(output);
     }
 }

@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class Student {
+
+
     protected String studentNumber;
     protected String fullName;
     protected int totalCredit;
@@ -24,10 +26,22 @@ public class Student {
         System.out.print("Enter total credit: ");
         this.totalCredit = sc.nextInt();
         sc.nextLine();
-        System.out.print("Enter average score");
+        System.out.print("Enter average score: ");
         avgScore = sc.nextDouble();
+    }
+    public String getStudentNumber() {
+        return studentNumber;
     }
     public boolean isGraduate() {
         return false;
     }
+    public String getType(){
+        return "";
+    }
+    public String getName(){
+        return fullName;
+    }
+    public void print(){
+    }
+
 }

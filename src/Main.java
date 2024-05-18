@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -6,6 +7,9 @@ public class Main {
         ArrayList<Student> list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int n = -1;
+        int intInput;
+        int temp;
+        String strInput;
         while (n != 8){
             System.out.println("1.add new college student");
             System.out.println("2.add new university student");
@@ -21,10 +25,63 @@ public class Main {
                 case 1:
                     Student collegeStudent = new CollegeStudent();
                     collegeStudent.input();
+                    list.add(collegeStudent);
                     break;
                 case 2:
                     Student uniStudent = new UniversityStudent();
                     uniStudent.input();
+                    list.add(uniStudent);
+                    break;
+                case 3:
+                    System.out.print("Enter id to remove: ");
+                    strInput = sc.nextLine();
+                    for (int i = 0; i<list.size();i++){
+                        if (list.get(i).getStudentNumber().equals(strInput)){
+                            list.remove(i);
+                            break;
+                        }
+                    }
+                    break;
+                case 4:
+                    for (int i = 0;i<list.size();i++){
+                        list.get(i).print();
+                    }
+                    break;
+                case 5:
+                    temp = 0;
+
+                    for (int i = 0; i<list.size();i++){
+                        if (list.get(i).isGraduate()){
+                            list.get(i).print();
+                            temp++;
+                        }
+                    }
+                    System.out.println("number of eligible: "+temp);
+                    break;
+                case 6:
+                    Collections.sort(list,((o1, o2) -> {
+                        int compare = o1.getType().compareTo(o2.getType());
+
+                        if (o1.getType().equals(o2.getType())){
+                            compare = o1.getStudentNumber().compareTo(o2.getStudentNumber());
+                        }
+                        return compare;
+                    }));
+                    break;
+                case 7:
+                    System.out.print("Enter name to search: ");
+                    strInput = sc.nextLine();
+                    for (int i = 0;i<list.size();i++){
+                        if (list.get(i).getName().equals(strInput)){
+                            list.get(i).print();
+                            break;
+                        }
+                    }
+                    break;
+                case 8:
+                    break;
+                default:
+                    break;
             }
 
         }
