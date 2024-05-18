@@ -61,9 +61,9 @@ public class Main {
                     break;
                 case 6:
                     Collections.sort(list,((o1, o2) -> {
-                        int compare = o1.getType().compareTo(o2.getType());
+                        int compare = Integer.compare(o1.getType(),o2.getType());
 
-                        if (o1.getType().equals(o2.getType())){
+                        if (compare == 0){
                             compare = o1.getStudentNumber().compareTo(o2.getStudentNumber());
                         }
                         return compare;

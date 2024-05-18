@@ -15,8 +15,8 @@ public class CollegeStudent extends Student {
 
     }
     @Override
-    public String getType(){
-        return "College";
+    public int getType(){
+        return 0;
     }
     @Override
     public void input(){

@@ -35,8 +35,8 @@ public class Student {
     public boolean isGraduate() {
         return false;
     }
-    public String getType(){
-        return "";
+    public int getType(){
+        return 0;
     }
     public String getName(){
         return fullName;

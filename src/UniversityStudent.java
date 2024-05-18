@@ -18,8 +18,8 @@ public class UniversityStudent extends Student{
 
     }
     @Override
-    public String getType(){
-        return "University";
+    public int getType(){
+        return 1;
     }
     @Override
     public void input(){
