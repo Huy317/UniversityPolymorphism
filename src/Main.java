@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
@@ -60,14 +61,7 @@ public class Main {
                     System.out.println("number of eligible: "+temp);
                     break;
                 case 6:
-                    Collections.sort(list,((o1, o2) -> {
-                        int compare = Integer.compare(o1.getType(),o2.getType());
-
-                        if (compare == 0){
-                            compare = o1.getStudentNumber().compareTo(o2.getStudentNumber());
-                        }
-                        return compare;
-                    }));
+                    Collections.sort(list,(Comparator.comparingInt(Student::getType).thenComparing(Student::getStudentNumber)));
                     break;
                 case 7:
                     System.out.print("Enter name to search: ");
@@ -77,7 +71,7 @@ public class Main {
                         if (list.get(i).getName().equals(strInput)){
                             list.get(i).print();
                             bool = true;
-                            break;
+
                         }
                     }
                     if (!bool){
