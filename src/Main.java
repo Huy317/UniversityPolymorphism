@@ -9,6 +9,7 @@ public class Main {
         int n = -1;
         int intInput;
         int temp;
+        boolean bool;
         String strInput;
         while (n != 8){
             System.out.println("1.add new college student");
@@ -71,11 +72,16 @@ public class Main {
                 case 7:
                     System.out.print("Enter name to search: ");
                     strInput = sc.nextLine();
+                    bool = false;
                     for (int i = 0;i<list.size();i++){
                         if (list.get(i).getName().equals(strInput)){
                             list.get(i).print();
+                            bool = true;
                             break;
                         }
+                    }
+                    if (!bool){
+                        System.out.println("Student doesn't exist");
                     }
                     break;
                 case 8:
